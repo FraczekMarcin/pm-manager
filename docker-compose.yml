@@ -1,12 +1,26 @@
-version: "3.9"
+version: '3.8'
 services:
   backend:
     build: ./backend
+    volumes:
+      - ./backend:/app
+      - dbdata:/app/data
     ports:
       - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./data/app.db
+      - SECRET_KEY=change_this_secret
+    restart: unless-stopped
+
   frontend:
     build: ./frontend
+    volumes:
+      - ./frontend:/app
     ports:
       - "3000:3000"
-    depends_on:
-      - backend
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    restart: unless-stopped
+
+volumes:
+  dbdata:

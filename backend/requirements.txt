@@ -1,2 +1,9 @@
 fastapi
 uvicorn[standard]
+SQLAlchemy
+python-multipart
+passlib[bcrypt]
+PyJWT
+pydantic
+pandas
+openpyxl
