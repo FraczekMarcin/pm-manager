@@ -15,7 +15,7 @@ newgrp docker
 ```
 2. Sklonuj repo (przykład):
 ```bash
-git clone https://github.com/yourusername/pm-manager.git
+git clone https://github.com/fraczek.marcin/pm-manager.git
 cd pm-manager
 ```
 3. Uruchom kontenery:
